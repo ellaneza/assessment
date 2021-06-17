@@ -25,5 +25,5 @@ Route::prefix('/user')->group( function() {
 });
 
 Route::prefix('/product')->group( function() {
-	Route::get('/allCategory', 'api\v1\ProductController@listAllCategory');
+	Route::middleware('auth:api')->get('/allCategory', 'api\v1\ProductController@listAllCategory');
 });
